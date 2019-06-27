@@ -11,7 +11,8 @@ def check_credentials(username, password):
     ldap_username = '%s@example.com' % username
     ldap_password = password
     base_dn = 'DC=example,DC=com'
-    ldap_filter = 'userPrincipalName=%s@example.com' % username
+    ldap_filter = 'sAMAccountName=%s' % username
+    #ldap_filter = 'userPrincipalName=%s@example.com' % username
     group_attr = 'memberOf'
     logging.debug('ldap server: ' + ldap_server)
     logging.debug('ldap_username: ' + ldap_username)
